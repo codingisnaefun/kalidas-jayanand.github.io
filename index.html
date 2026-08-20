@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kalidas Jayanand — User Research</title>
+<meta name="description" content="User research portfolio. Three studies in health services — an NHS homelessness clinic in Edinburgh and a WHO-funded trial in Kerala.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --stone:#E4E2DC;        /* Edinburgh sandstone paper */
+  --stone-deep:#D6D3CA;
+  --ink:#14202B;          /* deep slate */
+  --ink-soft:#4A5561;
+  --navy:#1F3864;         /* carried over from the CV */
+  --moss:#1B5E35;         /* shipped */
+  --claret:#7A2E38;       /* removed / to confirm */
+  --rule:rgba(20,32,43,.16);
+  --display:'Bricolage Grotesque',system-ui,sans-serif;
+  --body:'Newsreader',Georgia,serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --gut:clamp(20px,5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--stone);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:clamp(17px,1.05vw,19px);
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+a{color:inherit}
+
+/* ---------- utility type ---------- */
+.mono{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:500}
+.rule{border:0;border-top:1px solid var(--rule)}
+
+/* ---------- masthead ---------- */
+.masthead{padding:28px 0 0}
+.masthead-in{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;
+  border-bottom:1px solid var(--ink);padding-bottom:12px}
+.masthead .name{font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.02em}
+.masthead .role{color:var(--ink-soft)}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(56px,10vw,120px) 0 clamp(48px,8vw,96px)}
+.hero .eyebrow{color:var(--navy);margin-bottom:clamp(20px,3vw,34px)}
+.hero h1{
+  font-family:var(--display);
+  font-weight:800;
+  font-size:clamp(42px,8.4vw,96px);
+  line-height:.92;
+  letter-spacing:-.035em;
+  max-width:15ch;
+}
+.hero .deck{
+  font-size:clamp(19px,2.1vw,24px);line-height:1.5;max-width:44ch;
+  margin-top:clamp(24px,3.5vw,38px);color:var(--ink);
+}
+.hero .deck em{font-style:italic;color:var(--navy)}
+.hero-meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:clamp(30px,4vw,46px);color:var(--ink-soft)}
+.hero-meta a{color:var(--navy);text-decoration-thickness:1px;text-underline-offset:3px}
+
+/* ---------- case sections ---------- */
+.case{padding:clamp(52px,7vw,86px) 0;border-top:1px solid var(--ink)}
+.case-head{margin-bottom:clamp(30px,4vw,46px)}
+.case-tag{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:16px}
+.case-tag .num{font-family:var(--mono);font-weight:600;font-size:11px;letter-spacing:.16em;color:var(--navy)}
+.badge{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;
+  padding:4px 9px;border:1px solid currentColor;border-radius:2px}
+.badge.ship{color:var(--moss)}
+.badge.kill{color:var(--claret)}
+.case h2{font-family:var(--display);font-weight:600;font-size:clamp(30px,4.6vw,52px);
+  line-height:1.02;letter-spacing:-.025em;max-width:19ch}
+.case .where{margin-top:12px;color:var(--ink-soft);font-size:16px;font-style:italic}
+
+/* label rail grid */
+.row{display:grid;grid-template-columns:150px 1fr;gap:clamp(20px,4vw,52px);
+  padding:22px 0;border-top:1px solid var(--rule);align-items:start}
+.row > .lab{color:var(--navy);padding-top:.42em}
+.row p + p{margin-top:.85em}
+.row ul{list-style:none;margin-top:.4em}
+.row ul li{position:relative;padding-left:20px;margin-top:.5em}
+.row ul li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:1px;background:var(--navy)}
+
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+.chip{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;padding:5px 10px;
+  border:1px solid var(--rule);border-radius:99px;color:var(--ink-soft);background:rgba(255,255,255,.35)}
+
+/* the signature: decision stamp */
+.stamp{
+  display:block;width:min(54ch,100%);margin-top:4px;
+  border:2px solid currentColor;border-radius:3px;padding:18px 22px 20px;
+  background:rgba(255,255,255,.4);
+  transform:rotate(-.7deg);
+}
+.stamp.ship{color:var(--moss)}
+.stamp.kill{color:var(--claret)}
+.stamp .stamp-lab{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  font-weight:600;display:block;margin-bottom:9px;opacity:.85}
+.stamp .stamp-body{font-family:var(--display);font-weight:600;font-size:clamp(19px,2.3vw,25px);
+  line-height:1.22;letter-spacing:-.015em;color:var(--ink)}
+
+.metric{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.metric .big{font-family:var(--display);font-weight:800;font-size:clamp(50px,8vw,84px);
+  line-height:.86;letter-spacing:-.04em;color:var(--moss)}
+.metric .cap{max-width:30ch;color:var(--ink-soft);font-size:16px}
+
+.pull{font-family:var(--display);font-weight:400;font-size:clamp(22px,2.9vw,32px);
+  line-height:1.22;letter-spacing:-.02em;max-width:26ch}
+
+/* to-confirm marker */
+.todo{border-left:3px solid var(--claret);padding:12px 0 12px 16px;background:rgba(122,46,56,.05);
+  font-size:16px;color:var(--ink-soft)}
+.todo b{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--claret);display:block;margin-bottom:5px}
+
+/* ---------- built ---------- */
+.built{padding:clamp(52px,7vw,86px) 0;border-top:1px solid var(--ink)}
+.built h2{font-family:var(--display);font-weight:600;font-size:clamp(28px,4vw,44px);
+  letter-spacing:-.025em;line-height:1.05;max-width:20ch}
+.built .intro{max-width:52ch;margin-top:16px;color:var(--ink-soft)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:0;
+  border-top:1px solid var(--rule);border-left:1px solid var(--rule);margin-top:clamp(30px,4vw,44px)}
+.card{background:transparent;padding:26px 24px 28px;display:flex;flex-direction:column;gap:11px;
+  border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.card .k{color:var(--navy)}
+.card h3{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:-.02em;line-height:1.12}
+.card p{font-size:16.5px;line-height:1.55;color:var(--ink-soft)}
+.card .tools{margin-top:auto;padding-top:12px;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.08em;color:var(--ink-soft);border-top:1px solid var(--rule)}
+.card.draft{background:rgba(122,46,56,.045)}
+
+/* ---------- methods + about ---------- */
+.two{display:grid;grid-template-columns:150px 1fr;gap:clamp(20px,4vw,52px);
+  padding:22px 0;border-top:1px solid var(--rule);align-items:start}
+.two .lab{color:var(--navy);padding-top:.42em}
+.methods{padding:clamp(52px,7vw,86px) 0;border-top:1px solid var(--ink)}
+.methods h2,.about h2{font-family:var(--display);font-weight:600;font-size:clamp(28px,4vw,44px);
+  letter-spacing:-.025em;line-height:1.05;margin-bottom:clamp(24px,3vw,34px)}
+.about{padding:clamp(52px,7vw,86px) 0 0;border-top:1px solid var(--ink)}
+.about .lede{font-size:clamp(19px,2vw,23px);line-height:1.5;max-width:46ch}
+.about p + p{margin-top:1em}
+
+/* ---------- footer ---------- */
+footer{padding:clamp(48px,7vw,84px) 0 60px}
+.contact{display:flex;flex-wrap:wrap;gap:12px 34px;margin-top:22px}
+.contact a{font-family:var(--display);font-weight:600;font-size:clamp(18px,2.2vw,24px);
+  letter-spacing:-.02em;color:var(--navy);text-decoration:none;border-bottom:1.5px solid transparent;
+  transition:border-color .18s ease}
+.contact a:hover,.contact a:focus-visible{border-bottom-color:var(--navy)}
+.colophon{margin-top:clamp(40px,6vw,70px);padding-top:16px;border-top:1px solid var(--rule);
+  color:var(--ink-soft);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
+
+@media (max-width:720px){
+  .row,.two{grid-template-columns:1fr;gap:8px;padding:20px 0}
+  .row > .lab,.two .lab{padding-top:0}
+  .stamp{transform:none}
+  .hero h1{max-width:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="masthead-in">
+      <span class="name">KALIDAS JAYANAND</span>
+      <span class="mono role">User research · Health &amp; public services</span>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="mono eyebrow">Selected work · 2023–2026 · Edinburgh &amp; Kerala</p>
+    <h1>A phone call, a build list, a leaflet.</h1>
+    <p class="deck">Three studies in health services, and three completely different outputs. None of them started as a design problem. All three changed what a service <em>actually did</em>.</p>
+    <div class="hero-meta mono">
+      <span>MPH, University of Edinburgh</span>
+      <span><a href="#work">Three case studies ↓</a></span>
+      <span><a href="mailto:kalidassreebadra@gmail.com">Get in touch</a></span>
+    </div>
+  </div>
+</section>
+
+<main id="work">
+
+<!-- ============ CASE 01 ============ -->
+<section class="case rv">
+  <div class="wrap">
+    <div class="case-head">
+      <div class="case-tag">
+        <span class="num">Case 01</span>
+        <span class="badge ship">Adopted</span>
+        <span class="mono" style="color:var(--ink-soft)">NHS Lothian &middot; 2023&ndash;2025</span>
+      </div>
+      <h2>Why people stopped coming to the OST clinic</h2>
+      <p class="where">Opioid substitution therapy clinic, The Access Place &mdash; NHS primary care for people experiencing homelessness, Edinburgh Health &amp; Social Care Partnership</p>
+    </div>
+
+    <div class="row">
+      <span class="mono lab">Context</span>
+      <div>
+        <p>The Access Place is a primary care service for people experiencing homelessness in Edinburgh. Its opioid substitution therapy clinic dispenses scheduled medication on set days to a caseload of around a hundred patients.</p>
+        <p>A colleague and I noticed missed appointments at the OST clinic climbing. That costs more here than a missed appointment usually does. The service isn&rsquo;t licensed to hold scheduled medication in-house overnight, so every dose that isn&rsquo;t collected has to go back to pharmacy and be reissued &mdash; a controlled-drugs return, staff time on both sides, and a patient who goes without.</p>
+        <p>The missed appointments were being counted. Nobody had asked the patients why.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <span class="mono lab">Method</span>
+      <div>
+        <p>We set a threshold and worked to it: <strong>every patient who missed two or more consecutive OST appointments</strong> was someone we spoke to. Not a convenience sample of whoever happened to be easy to catch &mdash; a defined group, identified from the records, approached in the clinic.</p>
+        <p>Two consecutive misses is the point where a pattern separates from a bad week, and it&rsquo;s also the point where the clinical risk starts to matter. Using it as the inclusion rule meant we were systematically talking to the people the service was in the process of losing, rather than the ones still turning up.</p>
+        <p>Beyond that it was qualitative work with no budget and no formal protocol: two staff on a front desk deciding the reason behind a number was worth more than the number. Working the desk was the access. These are patients who don&rsquo;t fill in feedback forms and don&rsquo;t complain through channels, and the only reason they talked to us is that they already knew us.</p>
+        <div class="chips">
+          <span class="chip">Patient interviews</span>
+          <span class="chip">Threshold-based sampling</span>
+          <span class="chip">DNA record review</span>
+          <span class="chip">Front-line observation</span>
+          <span class="chip">Thematic grouping</span>
+          <span class="chip">Vision (clinical records)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <span class="mono lab">Finding</span>
+      <div>
+        <p class="pull">Not one reason we heard was about not wanting treatment. Every one was about the clinic being hard to attend.</p>
+        <ul style="margin-top:20px">
+          <li><strong>Timing.</strong> Clinic hours didn&rsquo;t fit around people&rsquo;s days, and there was no flexibility in them.</li>
+          <li><strong>No reminder.</strong> Nothing went out ahead of an appointment. People weren&rsquo;t refusing to come; they were losing track of the day.</li>
+          <li><strong>Dead phone numbers.</strong> Contact details on record were out of date, so the service couldn&rsquo;t have reminded people even if it had tried.</li>
+        </ul>
+        <p style="margin-top:16px">Framed as <em>patients who don&rsquo;t attend</em>, the failure sits inside the patient and there&rsquo;s nothing to do about it. Framed as <em>a clinic that&rsquo;s awkward to reach and never reminds you</em>, it sits inside the service &mdash; where somebody can actually fix it.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <span class="mono lab">Decision</span>
+      <div>
+        <div class="stamp ship">
+          <span class="stamp-lab">Adopted</span>
+          <span class="stamp-body">Clinicians in the OST clinic now call their own patients each morning before clinic opens, with a text reminder going out the following day.</span>
+        </div>
+        <p style="margin-top:20px">We took the findings to senior management with that recommendation attached. It costs a few minutes of clinician time each morning and no money at all, which is a large part of why it was agreed rather than admired.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <span class="mono lab">Impact</span>
+      <div>
+        <div class="metric">
+          <span class="big">+30%</span>
+          <span class="cap">rise in attendance at the OST clinic across the two months after the change</span>
+        </div>
+        <p style="margin-top:20px">Fewer controlled-drugs returns, less pharmacy rework, and a hundred-odd people more likely to get the dose they were prescribed.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <span class="mono lab">What I&rsquo;d<br>do again</span>
+      <div>
+        <ul>
+          <li>Treat a shared hunch as a research question. Two people noticing the same thing is a signal, but it isn&rsquo;t evidence until somebody goes and checks.</li>
+          <li>Ask the people who stopped coming, and define &ldquo;stopped&rdquo; before you start. Two consecutive misses gave us a rule instead of a hunch about who to approach, and meant nobody who mattered got skipped because they were hard to catch.</li>
+          <li>Refuse the framing that locates the failure in the user. &ldquo;Did not attend&rdquo; describes a service at least as much as it describes a person.</li>
+          <li>Recommend something the service can actually afford. A perfect intervention nobody has capacity for is worth less than a phone call that happens every morning.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASE 02 ============ -->
+<section class="case rv">
+  <div class="wrap">
+    <div class="case-head">
+      <div class="case-tag">
+        <span class="num">Case 02</span>
+        <span class="badge ship">In build</span>
+        <span class="mono" style="color:var(--ink-soft)">WHO-funded cluster RCT &middot; 2026</span>
+      </div>
+      <h2>The app wasn&rsquo;t ready to test on anyone yet</h2>
+      <p class="where">SHRADDHA-CMM &mdash; app-based lifestyle intervention for cardiometabolic multimorbidity, ~2,000 participants across Kerala</p>
+    </div>
+
+    <div class="row">
+      <span class="mono lab">Context</span>
+      <div>
+        <p>SHRADDHA-CMM is a WHO-funded cluster randomised trial testing an app-based lifestyle intervention for cardiometabolic multimorbidity across roughly 2,000 participants in Kerala. The intervention group is largely older adults with limited smartphone experience, reached through community health workers rather than clinicians.</p>
+        <p>When I joined, the app was bones. The logic and the screens existed, but it had been built to satisfy the protocol rather than to be used by anybody in particular.</p>
+        <p>The plan was to take it to participants for usability testing. Before spending that access &mdash; and it is expensive access, in a rural population, through health workers with day jobs &mdash; somebody needed to check the build could survive contact with a real person.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <span class="mono lab">Method</span>
+      <div>
+        <p>A structured expert review, run by me and the other research coordinator. We walked the app end to end against the conditions it would actually meet: an older adult in Kerala, on a cheap phone, with a health worker beside them and a queue behind that health worker.</p>
+        <p>Two reviewers rather than one was deliberate. Expert review is only as good as the reviewers&rsquo; blind spots, and two people flag different things &mdash; then you argue about the ones only one of you saw, which is usually where the interesting findings are.</p>
+        <p>We assessed three things in parallel: whether the build worked at all, whether it would be usable by this population, and whether it captured what the trial needed to monitor.</p>
+        <div class="chips">
+          <span class="chip">Structured expert review</span>
+          <span class="chip">Functional defect audit</span>
+          <span class="chip">Heuristic walkthrough</span>
+          <span class="chip">Feature gap analysis</span>
+          <span class="chip">Requirements writing</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <span class="mono lab">Finding</span>
+      <div>
+        <p class="pull">The app wasn&rsquo;t in a state where usability testing would have told us anything. Participants would have hit broken buttons long before they hit a design decision.</p>
+        <ul style="margin-top:20px">
+          <li><strong>Functional defects.</strong> Buttons that did nothing, placeholder content still sitting in live screens, and a broadcast messaging system glitching in ways that would have looked, to a participant, like the trial had gone quiet on them.</li>
+          <li><strong>Usability for the actual population.</strong> Interface conventions that assume you have used an app before, on screens that assume you can read them.</li>
+          <li><strong>Missing monitoring.</strong> No dashboards and no view counts on the IEC materials &mdash; so there was no way to tell whether anyone was engaging with the intervention content at all. In a trial, that isn&rsquo;t a reporting inconvenience. If you can&rsquo;t measure whether the intervention was received, you can&rsquo;t interpret the result.</li>
+        </ul>
+        <p style="margin-top:16px">Running participant sessions on that build would have produced a long list of bug reports dressed up as user insight, and burned the access we needed for real testing later.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <span class="mono lab">Output</span>
+      <div>
+        <div class="stamp ship">
+          <span class="stamp-lab">Delivered to engineering</span>
+          <span class="stamp-body">A 20-point change list &mdash; defects, usability fixes and the monitoring features the trial needed &mdash; written as build requirements the software team could work through directly.</span>
+        </div>
+        <p style="margin-top:20px">The format was deliberate. Findings that arrive as a narrative document get read, agreed with, and quietly deprioritised. A numbered list of specific changes gets worked through. I write for the person who has to act, which here was a developer with a backlog.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <span class="mono lab">Impact</span>
+      <div>
+        <ul>
+          <li>The build moved from protocol-shaped toward participant-shaped before the intervention group ever saw it.</li>
+          <li>Monitoring requirements went in as features rather than being retrofitted once the trial was running.</li>
+          <li>Participant usability testing is now scheduled against a build that can actually support it &mdash; which is the point of doing this first.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <span class="mono lab">What I&rsquo;d<br>do again</span>
+      <div>
+        <ul>
+          <li>Check the build before spending user access. Participant time in a rural trial population is the scarcest resource in the project, and you get it once.</li>
+          <li>Review in pairs. The findings worth having are usually the ones only one of you spotted.</li>
+          <li>Ask what the trial needs to measure, not only what the user needs to do. Nobody requests a dashboard, and the study is unreadable without one.</li>
+          <li>Hand engineers a change list, not a report. Research that needs translating before anyone can act on it usually doesn&rsquo;t get acted on.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASE 03 ============ -->
+<section class="case rv">
+  <div class="wrap">
+    <div class="case-head">
+      <div class="case-tag">
+        <span class="num">Case 03</span>
+        <span class="badge kill">Replaced</span>
+        <span class="mono" style="color:var(--ink-soft)">WHO-funded cluster RCT · 2026</span>
+      </div>
+      <h2>The module that asked for the wrong thing</h2>
+      <p class="where">SHRADDHA-CMM — app-based lifestyle intervention for cardiometabolic multimorbidity, ~2,000 participants across Kerala</p>
+    </div>
+
+    <div class="row">
+      <span class="mono lab">Context</span>
+      <div>
+        <p>Same trial as Case 02, different question. Once the app was usable, one planned arm still didn&rsquo;t sit right: an alcohol-cessation module.</p>
+        <p>The behavioural model behind it was sound and the build was scoped. Nobody had asked whether participants would tell it the truth.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <span class="mono lab">Method</span>
+      <div>
+        <p>Usability testing and contextual enquiry with the people who would actually be at either end of this module — community health workers collecting the data, and older adults in Kerala providing it. I also ran the training sessions for health workers on the questionnaire, which turned out to be the richest research setting available: watching where people hesitate while they think they're being taught is more honest than asking them afterwards.</p>
+        <div class="chips">
+          <span class="chip">Usability testing</span>
+          <span class="chip">Contextual enquiry</span>
+          <span class="chip">Observed training sessions</span>
+          <span class="chip">Community health worker interviews</span>
+          <span class="chip">Requirements writing</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <span class="mono lab">Finding</span>
+      <div>
+        <p class="pull">Alcohol self-reporting in this population is a stigma problem, not an interface problem. No amount of good design would produce honest data.</p>
+        <p style="margin-top:18px">Participants would be disclosing to a community health worker who lives in their village and will still be there next year. That relationship is the reason the trial works at all — and it is exactly what makes candid alcohol disclosure unlikely. This wasn't a fixable usability defect. It sat underneath the product.</p>
+        <p>Which meant the module would have generated data, passed its own validation, and been wrong. The most expensive kind of failure: the kind that looks like success until analysis.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <span class="mono lab">Decision</span>
+      <div>
+        <div class="stamp kill">
+          <span class="stamp-lab">Replaced</span>
+          <span class="stamp-body">The alcohol-cessation module came out of the app and was replaced with printed IEC materials and helpline numbers for alcohol and smoking support &mdash; information participants can take away without disclosing anything to anyone.</span>
+        </div>
+        <p style="margin-top:20px">I put the evidence to the Principal Investigator and the Associate Dean of Research. The argument wasn&rsquo;t that the need had gone away &mdash; participants still needed alcohol and smoking support. It was that the app was the wrong channel to deliver it through, because the app required a disclosure the setting made unlikely. A leaflet and a phone number keep the support and ask nothing in return.</p>
+        <p>Recommending that a funded team stop building something is a harder conversation than recommending a fix. It goes down considerably better when you arrive with the replacement already worked out.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <span class="mono lab">Impact</span>
+      <div>
+        <ul>
+          <li>Engineering effort redirected before the module was built, not after a pilot exposed it.</li>
+          <li>A trial arm that would have produced confidently unreliable data never entered the protocol.</li>
+          <li>Participants kept access to alcohol and smoking support, through a route that requires no disclosure to anyone.</li>
+          <li>The team now asks &ldquo;will they tell us the truth?&rdquo; at scoping, alongside &ldquo;can they use it?&rdquo;</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <span class="mono lab">What I'd<br>do again</span>
+      <div>
+        <ul>
+          <li>Research the conditions around a feature, not only the feature. The interface was fine. The social setting it would live in was the problem.</li>
+          <li>Say the unwelcome thing early, while it&rsquo;s still cheap. The same finding six months later is a write-off instead of a decision.</li>
+          <li>Bring a replacement, not just an objection. &ldquo;This won&rsquo;t work&rdquo; is a problem for someone else; &ldquo;this won&rsquo;t work, here&rsquo;s what does&rdquo; is a decision they can take in the room.</li>
+          <li>Use training and onboarding as research. People show you where a product fails while they're learning it, long before they'll tell you.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BUILT ============ -->
+<section class="built rv">
+  <div class="wrap">
+    <h2>Things I've built to understand how building works</h2>
+    <p class="intro">I&rsquo;m not an engineer, and neither of these has shipped. I take a problem statement through to a working prototype so that when I hand requirements to a development team, I know what I&rsquo;m asking them for and roughly what it costs them.</p>
+
+    <div class="grid">
+      <article class="card">
+        <span class="mono k">In progress</span>
+        <h3>Medication adherence</h3>
+        <p>Dose scheduling by medication type, reminders, and an adherence trend view. Designed around what people actually forget &mdash; timing that shifts, doses that look identical &mdash; rather than around what&rsquo;s easy to model. The OST clinic study is somewhere underneath this one.</p>
+        <span class="tools">Claude Code &middot; Google Stitch</span>
+      </article>
+
+      <article class="card">
+        <span class="mono k">Prototype</span>
+        <h3>Penny</h3>
+        <p>A read-only spend tracker built to reduce money anxiety rather than maximise tracking. Limit-based views, a monthly recap card, and a roast report with a gentle-to-savage intensity setting &mdash; because financial shame is why most budgeting apps get deleted in week two.</p>
+        <span class="tools">Claude Code &middot; Google Stitch &middot; Bank aggregator sandbox</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ METHODS ============ -->
+<section class="methods rv">
+  <div class="wrap">
+    <h2>How I work</h2>
+
+    <div class="two">
+      <span class="mono lab">Methods</span>
+      <div><p>Usability testing and evaluation · semi-structured interviews · contextual enquiry · participatory workshops · survey design · thematic analysis · quantitative and behavioural data analysis · evidence synthesis · participant recruitment with seldom-heard groups</p></div>
+    </div>
+
+    <div class="two">
+      <span class="mono lab">Practice</span>
+      <div><p>User-centred design · service design thinking · discovery, alpha and beta phases · personas and journey mapping · accessible and inclusive research · translating findings into design and build requirements · GDPR-compliant data handling and information governance</p></div>
+    </div>
+
+    <div class="two">
+      <span class="mono lab">A bias<br>I'll admit</span>
+      <div><p>I over-weight the people who can't complain. Two years on an NHS front desk with users who had been let down by systems before will do that. It makes me good at finding silent failure and slower than I should be at trusting satisfaction scores.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about rv">
+  <div class="wrap">
+    <h2>About</h2>
+    <p class="lede">I research where services break for the people least able to say so.</p>
+    <div class="two" style="margin-top:clamp(24px,3vw,34px)">
+      <span class="mono lab">Background</span>
+      <div>
+        <p>Two years on the front line of an NHS primary care service in Edinburgh, then into health research — currently coordinating a WHO-funded cluster randomised trial and three further funded studies, and running the user research on the app-based toolkit inside it.</p>
+        <p>MPH from the University of Edinburgh in research methods, epidemiology and evidence synthesis. BTech in Biotechnology and Genetic Engineering, First Class with Distinction. GCP ICH E6(R3) certified. First-author publication in the International Journal of Community Medicine and Public Health.</p>
+        <p>I'm relocating to the UK and looking for user research work in health, public services or anywhere the users are harder to reach than a mailing list.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="mono" style="color:var(--navy)">Get in touch</p>
+    <div class="contact">
+      <a href="mailto:kalidassreebadra@gmail.com">kalidassreebadra@gmail.com</a>
+      <a href="https://www.linkedin.com/in/kalidas-jayanand/">LinkedIn</a>
+    </div>
+    <div class="colophon mono">
+      <span>Kalidas Jayanand — user research</span>
+      <span>Relocating to the UK · Glasgow / Leeds / Manchester / Edinburgh</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(e){e.classList.add('in')});
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}
+    });
+  },{rootMargin:'0px 0px -8% 0px',threshold:.06});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
